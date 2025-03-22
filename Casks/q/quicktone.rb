@@ -1,14 +1,21 @@
 cask "quick-tone" do
-    version "2.4.12.27" 
-    sha256 "bb4dba8b7c3a97ceef5d480aa4f509152cd72a020b2ea17337c9f7c6975e95d6"
-
-    url "https://nux.cherubtechnology.com//enclosure/sources/rHsTpBFUWRxDQNcT/NUX_QuickTone_MacOS_V2.4.12.27.zip"
-    name "QuickTone V5"
-    desc "QuickTone for FW V5"
+    version "2.4.12.27"
+    sha256 "7f7e5399f9783cfdc541f26ac2a9632956fca0ef453013c1458b5c10c0a17ce0"
+  
+    url "https://nux.cherubtechnology.com//enclosure/sources/rHsTpBFUWRxDQNcT/NUX_QuickTone_MacOS_V#{version}.zip"
+    name "quick-tone"
+    desc "Quick Tone for FW V5"
     homepage "https://www.nuxaudio.com/home.html"
-
-    auto_updates true
-    depends_on macos: ">= :high_sierra"
-
+  
+    livecheck do
+      url "https://www.nuxaudio.com/mg30.html"
+      regex(/href=.*?NUX_QuickTone_MacOS_V\.zip/i)
+    end
+  
     app "QuickTone.app"
-end
+  
+    zap trash: [
+      "~/Library/Application Support/NUX/com.nux.quicktone.cfg",
+    ]
+  end
+  
