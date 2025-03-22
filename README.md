@@ -17,7 +17,7 @@ Learn more about the hardware: [NUX MG30 Product Page](https://www.nuxaudio.com/
 
 2. **Install QuickTone:**
    ```bash
-   brew install --cask soulkoden/cask/quicktone
+   brew install --cask quicktone
    ```
 
 ## Usage
